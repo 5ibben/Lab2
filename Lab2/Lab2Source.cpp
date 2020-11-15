@@ -8,6 +8,8 @@ bool is_sorted(int *arr);
 bool is_palindrome(char* cArray);
 int array_rows_cols(int array[21][21]);
 void swap_sort(int& a, int& b, int& c, bool ascending);
+void shrink_array(int* array);
+void print_array(int* array, int len);
 
 int getArrayLength(char intArr[]);
 int getArrayLength(int intArr[]);
@@ -69,7 +71,45 @@ int main()
 		cout << "\nResult: " << a << b << c<<"\n";
 	}
 	
+
+	//input task.5 shrink
+	int shrinkMe[defaultArrayLenght] = { 4,2,-5,11,3,3 };
+	cout << "before shrinkage: ";
+	print_array(shrinkMe, defaultArrayLenght);
+	shrink_array(shrinkMe);
+	cout << "after shrinkage: ";
+	print_array(shrinkMe,defaultArrayLenght);
+
 	return 0;
+}
+
+void print_array(int* array,int len)
+{
+	int i = 0;
+	while (i < len)
+	{
+		cout << array[i];
+		i++;
+	}
+	cout << "\n";
+}
+
+void shrink_array(int *array)
+{
+	
+	int len = getArrayLength(array);
+	int i = 0;
+	while (array[i*2] != *"\0")
+	{
+		array[i] = array[i*2] + array[i*2+1];
+		i++;
+	}
+	int j = i;
+	while (j < len)
+	{
+		array[j] = 0;
+		j++;
+	}
 }
 
 
