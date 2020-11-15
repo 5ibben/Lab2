@@ -7,6 +7,7 @@ using namespace std;
 bool is_sorted(int *arr);
 bool is_palindrome(char* cArray);
 int array_rows_cols(int array[21][21]);
+void swap_sort(int& a, int& b, int& c, bool ascending);
 
 int getArrayLength(char intArr[]);
 int getArrayLength(int intArr[]);
@@ -16,7 +17,7 @@ int main()
 {
 	const int defaultArrayLenght = 10;
 	
-	/*
+	
 	//input task.1 palindrome
 	cout << "Enter a word to see if it´s a palindrome: ";
 	char toPalindrome[defaultArrayLenght];
@@ -51,14 +52,66 @@ int main()
 	}
 
 	array_rows_cols(intArray2D);
-	*/
+	
 
 	//input task.4 Swap sort (pass-by-reference)
-
+	int inputs[3];
+	int i = 0;
+	while (true)
+	{
+		cout << "\nGive a (0 to quit): "; int a; cin >> a;
+		if (a == 0)
+			break;
+		cout << "Give b: "; int b; cin >> b;
+		cout << "Give c: "; int c; cin >> c;
+		cout << "Sort ascending / descending(1 / 0) :"; bool d; cin >> d;
+		swap_sort(a, b, c, d);
+		cout << "\nResult: " << a << b << c<<"\n";
+	}
 	
 	return 0;
 }
 
+
+void swap_sort(int &a, int &b, int &c, bool ascending)
+{
+	int aTemp = a;
+	int bTemp = b;
+	int cTemp = c;
+	if (ascending)
+	{
+		for (int i = 0; i < 2; i++)		//ascending
+		{
+			if (a > b)
+			{
+				a = b; b = aTemp; 
+				aTemp = a; bTemp = b;
+			}
+			if (b > c)
+			{
+				b = c; c = bTemp; 
+				bTemp = b;
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i < 2; i++)		//descending
+		{
+			if (a < b)
+			{
+				a = b; b = aTemp;
+				aTemp = a; bTemp = b;
+			}
+			if (b < c)
+			{
+				b = c; c = bTemp;
+				bTemp = b;
+			}
+		}
+
+	}
+}
 
 int array_rows_cols(int array[21][21])
 {
@@ -84,6 +137,7 @@ int array_rows_cols(int array[21][21])
 	{
 		cout<< columnsum[b]<<" ";
 	}
+	cout << "\n";
 	return 0;
 }
 
