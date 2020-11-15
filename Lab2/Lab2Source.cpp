@@ -3,43 +3,78 @@ using namespace std;
 #include <string>
 #include <array>
 
-bool is_sorted(int len, int intArr[]);
-bool is_palindrome(int len, char cArray[]);
+bool is_sorted(int *arr);
+bool is_palindrome(char* cArray);
+
+int getArrayLength(char intArr[]);
+int getArrayLength(int intArr[]);
+int copyArray(char* fromArray, int* toArray, int arrayLength);
+int copyArray(int* fromArray, char* toArray, int arrayLength);
 int main()
 {
-	//Input for task 1
-	/*
-	string input;
-	cin >> input;
-	int intArray[20];
-	int len = input.length();
-	cout << "\n";
-	for (int i = 0; i < len; i++)
-	{
-		intArray[i] = input[i]-48;
-	}
-	cout << is_sorted(len,intArray);
-	*/
-
-	//char cArray[20];
-	//cin >> cArray;
-
-	char car[20] = "maeam";
-	int arrSize = sizeof(car) / sizeof(car[0]);
-	cout<<is_palindrome(arrSize, car);
+	const int defaultArrayLenght = 20;
 	
+	//input task.1 palindrome
+	cout << "Enter a word to see if it´s a palindrome: ";
+	char toPalindrome[defaultArrayLenght];
+	cin >> toPalindrome;
+	cout << is_palindrome(toPalindrome);
+
+	//input task.2 is_sorted
+	cout<<"\n"<< "Enter a number to see if it is in ascending order: ";
+	char toSorted[defaultArrayLenght];
+	int toSortedInt[defaultArrayLenght];
+	cin >> toSorted;
+	copyArray(toSorted, toSortedInt, defaultArrayLenght);
+	cout << is_sorted(toSortedInt);
+
+	//input task.3
 
 	
 	return 0;
 }
 
-
-bool is_sorted(int len,int intArr[])
+int copyArray(char* fromArray, int* toArray,int arrayLength)
 {
-	for (int i = 1; i < len; i++)
+	for (int i = 0; i < arrayLength; i++)
 	{
-		cout << intArr[i]<<"\n";
-		if (intArr[i]<=intArr[i-1])
+		toArray[i] = fromArray[i];
+	}
+	return 0;
+}
+int copyArray(int* fromArray, char* toArray, int arrayLength)
+{
+	for (int i = 0; i < arrayLength; i++)
+	{
+		toArray[i] = fromArray[i];
+	}
+	return 0;
+}
+
+int getArrayLength(char intArr[])
+{
+	int i = 0;
+	while (intArr[i] != *"\0")
+	{
+		i++;
+	}
+	return i;
+}
+int getArrayLength(int intArr[])
+{
+	int i = 0;
+	while (intArr[i] != *"\0")
+	{
+		i++;
+	}
+	return i;
+}
+
+bool is_sorted(int *arr)
+{
+	for (int i = 1; i < getArrayLength(arr); i++)
+	{
+		if (arr[i] <= arr[i - 1])
 		{
 			return false;
 		}
@@ -47,11 +82,11 @@ bool is_sorted(int len,int intArr[])
 	return true;
 }
 
-bool is_palindrome(int len, char *cArray)
+
+bool is_palindrome(char *cArray)
 {
-	cout << len;
 	int i=0;
-	int b=len-1;
+	int b=getArrayLength(cArray)-1;
 	while (i<b)
 	{
 		if (cArray[i]!=cArray[b])
