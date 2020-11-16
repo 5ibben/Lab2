@@ -17,6 +17,7 @@ int getArrayLength(char intArr[]);
 int getArrayLength(int intArr[]);
 int copyArray(char* fromArray, int* toArray, int arrayLength);
 int copyArray(int* fromArray, char* toArray, int arrayLength);
+
 int main()
 {
 	const int defaultArrayLenght = 10;
@@ -89,6 +90,7 @@ int main()
 
 	return 0;
 }
+
 
 void database()
 {

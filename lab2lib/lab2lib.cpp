@@ -5,6 +5,8 @@
 #include<vector>
 using namespace std;
 
+int getArrayLength(char intArr[]);
+int getArrayLength(int intArr[]);
 
 void print_array(int* array, int len)
 {
