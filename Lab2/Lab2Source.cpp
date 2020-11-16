@@ -3,6 +3,7 @@ using namespace std;
 #include <string>
 #include <array>
 #include <cstdlib>
+#include<vector>
 
 bool is_sorted(int *arr);
 bool is_palindrome(char* cArray);
@@ -10,6 +11,7 @@ int array_rows_cols(int array[21][21]);
 void swap_sort(int& a, int& b, int& c, bool ascending);
 void shrink_array(int* array);
 void print_array(int* array, int len);
+void database();
 
 int getArrayLength(char intArr[]);
 int getArrayLength(int intArr[]);
@@ -80,8 +82,96 @@ int main()
 	cout << "after shrinkage: ";
 	print_array(shrinkMe,defaultArrayLenght);
 
+	
+
+	//Task.6 Vector database
+	database();
+
 	return 0;
 }
+
+void database()
+{
+	vector<string> v;
+	string name;
+	while (true)
+	{
+		cout << "\n1.initialize database\n"
+			<< "2.insert\n"
+			<< "3.search\n"
+			<< "4.delete\n"
+			<< "5.print\n"
+			<< "6.quit\n\n"
+			<< "Make your choice: ";
+		int x;
+		cin >> x;
+		cout << "\n";
+		//name input for option 2, 3, 4.
+		if (x==2|| x == 3 || x == 4)
+		{
+			cout << "Please enter name: ";
+			cin >> name;
+		}
+
+		//1.initialize database
+		if (x == 1)
+		{
+			cout << "This will erase all names from database. Proceed?(y/n) : ";
+			char c;
+			cin >> c;
+			if (c==*"y")
+				v.clear();
+		}
+		
+		//2.insert
+		if (x==2)
+		{ 
+			v.push_back(name);
+		}
+		
+		//3.search
+		if (x==3)
+		{
+			for (auto e : v)
+			{
+				if (!e.find(name))
+				{
+					cout <<"\n"<< e;
+				}
+			}
+			cout << "\n";
+		}
+	
+		//4.delete
+		if (x==4)
+		{
+			vector<string> vTemp;
+			for (int i = 0; i < v.size(); i++)
+			{
+				if (v[i]!=name)
+				{
+					vTemp.push_back(v[i]);
+				}
+			}
+			v = vTemp;
+		}
+
+		//5.print
+		if (x==5)
+		{
+			for (auto e : v) 
+			{ cout << e << endl; }
+		}
+		
+		//6.quit
+		if (x==6)
+		{
+			cout << "Good Bye!\n";
+			break;
+		}
+	}
+}
+
 
 void print_array(int* array,int len)
 {
