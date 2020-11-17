@@ -150,6 +150,9 @@
       <Project>{4cd77efe-f36a-4b50-80fe-ad10a7e30505}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Task 8 Reflection.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

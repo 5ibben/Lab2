@@ -1,0 +1,43 @@
+
+
+-----------What did you learn? What did you know already?-----------
+
+I learned to read through the whole assignment before starting work, so I could plan the coding better.
+Unfortunately I learned this the hard way. On the upside however, I will probably always do it from now on.
+
+I learned a bit about Linking, Library and header files.
+
+I also learned a bunch of other stuff, but then I forgot it again.
+
+
+
+-----------What was difficult in the lab? How did you overcome it?-----------
+
+I had a long battle with some linking errors, in the end it turned out the culprit was a function reference before declaration, within another function, in the library.
+This error appered after the "library/header conversion", and was really hard to track down, as the "linker error" gave no clues as to where the right place to look would be.
+
+
+
+-----------How can the lab be improved?-----------
+
+I would say, just run through the actual instructions a couple more times to make sure they actually represent what is intended, as clear as possibly can be.
+Assume I have Asperger´s! maybe I have?! Also, maybe have someone else read it?
+
+Also, I would prefer if input/output datatypes were not specified for certain tasks. I understand why they are in most cases, but some seem unnecessary.
+Maybe it´s to push towards a certain implementation? however I feel like it only makes for unnecessary type conversions.
+This ties to my opinion stated in the previous lab; that I would prefer the freedom of choosing implementation, but I understand that´s not completely possible.
+
+An example of instructions I find annoying: 
+	Quote: "returns true/false accordingly"
+	Quote: "In main(), read a string input from the user into a char array, call your function to test it, and print out the result (true = 1, false = 0).""
+
+	this seem to imply that what should be printed out is "1" or "0", which really wouldn´t make much sense to a user.
+	A "clarification" makes more harm then good if it doesn´t actually clarify something.
+	I know this seems "nit-picky" but I think It´s important to be clear about instructions, 
+	what may cost the author a couple of minutes to formulate in a better way, may accumulate to hours between the students.
+
+
+
+-----------Additionally, write an estimate how many hours you spent on this lab.-----------
+
+10++
