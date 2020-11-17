@@ -15,7 +15,7 @@ int main()
     cout << "\nWelcome to lab 2.\nPlease be careful with input!\n";
 
     //Some variable declaration/assignment. To be used in function inputs.
-    const int defaultArrayLenght = 11;
+    const int defaultArrayLenght = 20;
     int shrinkMe[defaultArrayLenght] = { 5, 5, 7, 6, 2, 2, 11, 11, 5, 4 };
     int shrinkMe2[defaultArrayLenght] = { 5, 5, 7, 6, 2, 2, 11, 11, 5 };
     bool loop = true;
@@ -136,7 +136,7 @@ int main()
                 break;
 
             default://invalid task number
-                cout << "\nSorry, there is no such task!";
+                cout << "\nSorry, there is no such task!\n";
                 break;
         }
     }
